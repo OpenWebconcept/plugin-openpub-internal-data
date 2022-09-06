@@ -21,7 +21,7 @@ class ItemsFactory
     }
 
     /**
-     * Executes the correct controller based on the request.
+     * Executes the correct controller with provided method
      */
     public function retrieve(WP_REST_Request $request): array
     {
@@ -31,7 +31,7 @@ class ItemsFactory
     }
 
     /**
-     * Gets the desired controller depeneding on auth status
+     * Gets the desired controller depending on auth status
      */
     private function getController(WP_REST_Request $request): ItemController
     {
