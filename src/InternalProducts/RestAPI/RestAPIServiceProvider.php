@@ -52,5 +52,10 @@ class RestAPIServiceProvider extends ServiceProvider
             'methods'             => 'GET',
             'callback'            => [(new ItemsFactory('getItemBySlug', $this->plugin)), 'retrieve'],
         ], true);
+
+        register_rest_route($this->namespace, 'items/active', [
+            'methods'             => 'GET',
+            'callback'            => [(new ItemsFactory('getActiveItems', $this->plugin)), 'retrieve'],
+        ], true);
     }
 }

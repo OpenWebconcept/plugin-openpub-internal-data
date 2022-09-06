@@ -70,9 +70,29 @@ class InternalItemsController extends BaseController implements ItemController
         return $item;
     }
 
-    public function getActiveItems(WP_REST_Request $request)
+    /**
+     * Get a list of all active items.
+     */
+    public function getActiveItems(WP_REST_Request $request): array
     {
-        return [];
+        $this->addFields();
+        $parameters = $this->convertParameters($request->get_params());
+
+        $items = (new Item())
+            ->query(
+                array_merge(
+                    $this->getPaginatorParams($request),
+                    Item::addExpirationParameters()
+                )
+            );
+
+        if (false === $parameters['include-connected']) {
+            $items->hide(['connected']);
+        }
+
+        $posts = $items->all();
+
+        return $this->addPaginator($posts, $items->getQuery());
     }
 
     /**
