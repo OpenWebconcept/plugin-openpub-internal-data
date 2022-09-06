@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Registers the metabox field.
  */
@@ -24,8 +26,6 @@ class Metaboxes
 
     /**
      * Dependency injection of the plugin, for future use.
-     *
-     * @param Plugin $plugin
      */
     public function __construct(Plugin $plugin)
     {
@@ -34,8 +34,6 @@ class Metaboxes
 
     /**
      * Register metaboxes for internal data into openpub-base plugin.
-     *
-     * @param Plugin $basePlugin
      */
     public function register(Plugin $basePlugin)
     {

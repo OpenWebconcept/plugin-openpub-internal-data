@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Responsible for the filtering the internal keyword.
  */
@@ -15,10 +17,6 @@ class DataField extends CreatesFields
 {
     /**
      * Create the internaldata field for a given post.
-     *
-     * @param WP_Post $post
-     *
-     * @return array
      */
     public function create(WP_Post $post): array
     {
@@ -32,10 +30,6 @@ class DataField extends CreatesFields
 
     /**
      * Filters the post if internal data of a given post exists.
-     *
-     * @param WP_Post $post
-     *
-     * @return array
      */
     private function getData(WP_Post $post): array
     {

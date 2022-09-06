@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Trait which appends a conditional to a defined taxonomy query.
  */
@@ -13,18 +15,12 @@ trait AppendToTaxQuery
 
     /**
      * Appends a conditional to a taxonomy query.
-     *
-     * @param array  $query
-     * @param array  $newQuery
-     * @param string $relation
-     *
-     * @return array
      */
     public function appendToTaxQuery(array $query, array $newQuery, $relation = 'AND'): array
     {
         $result = [
             'relation' => $relation,
-            $newQuery
+            $newQuery,
         ];
 
         if (! empty($query)) {
