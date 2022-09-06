@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Get all the items of, which have the 'internal' taxonomy type.
+ * Get items, including the 'internal' fields
  */
 
 namespace OWC\OpenPub\InternalProducts\RestAPI;

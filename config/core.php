@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     /**
      * Service Providers.
@@ -9,7 +11,6 @@ return [
          * Global providers.
          */
         OWC\OpenPub\InternalProducts\RestAPI\RestAPIServiceProvider::class,
-        OWC\OpenPub\InternalProducts\Taxonomy\TaxonomyServiceProvider::class,
 
         /**
          * Providers specific to the admin.
