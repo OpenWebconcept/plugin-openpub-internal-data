@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OWC\OpenPub\InternalProducts\RestAPI;
+namespace OWC\OpenPub\InternalData\RestAPI;
 
-use OWC\OpenPub\InternalProducts\Foundation\Plugin;
-use OWC\OpenPub\InternalProducts\Interfaces\ItemController;
+use OWC\OpenPub\InternalData\Foundation\Plugin;
+use OWC\OpenPub\InternalData\Interfaces\ItemController;
 
 /**
  * Selects the correct controller based on the request.

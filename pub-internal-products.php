@@ -1,25 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * Plugin Name:       OpenPub Internal Products
+ * Plugin Name:       OpenPub Internal Data
  * Plugin URI:        https://www.openwebconcept.nl/
- * Description:       Splits all of the PUB items in two distinct types: internal and/or external products.
+ * Description:       Adds internal data to authenticated requests
  * Version:           1.0.0
  * Author:            Yard | Digital Agency
  * Author URI:        https://www.yard.nl/
  * License:           GPL-3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain:       openpub-internal-products
+ * Text Domain:       openpub-internal-data
  * Domain Path:       /languages
  */
 
-use OWC\OpenPub\InternalProducts\Autoloader;
-use OWC\OpenPub\InternalProducts\Foundation\Plugin;
+use OWC\OpenPub\InternalData\Autoloader;
+use OWC\OpenPub\InternalData\Foundation\Plugin;
 
 /**
  * If this file is called directly, abort.
  */
-if (!defined('WPINC')) {
+if (! defined('WPINC')) {
     die;
 }
 

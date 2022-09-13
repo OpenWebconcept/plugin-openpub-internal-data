@@ -6,13 +6,13 @@ declare(strict_types=1);
  * Get items, including the 'internal' fields
  */
 
-namespace OWC\OpenPub\InternalProducts\RestAPI;
+namespace OWC\OpenPub\InternalData\RestAPI;
 
 use OWC\OpenPub\Base\Foundation\Plugin;
 use OWC\OpenPub\Base\Repositories\Item;
 use OWC\OpenPub\Base\RestAPI\Controllers\BaseController;
-use OWC\OpenPub\InternalProducts\Data\DataServiceProvider;
-use OWC\OpenPub\InternalProducts\Interfaces\ItemController;
+use OWC\OpenPub\InternalData\Data\DataServiceProvider;
+use OWC\OpenPub\InternalData\Interfaces\ItemController;
 use WP_REST_Request;
 
 /**

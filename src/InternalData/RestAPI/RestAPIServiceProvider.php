@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Boots the rest API service provider.
  */
 
-namespace OWC\OpenPub\InternalProducts\RestAPI;
+namespace OWC\OpenPub\InternalData\RestAPI;
 
 use OWC\OpenPub\Base\Foundation\ServiceProvider;
 

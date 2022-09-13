@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Registers the metabox field.
  */
 
-namespace OWC\OpenPub\InternalProducts\Data;
+namespace OWC\OpenPub\InternalData\Data;
 
 use OWC\OpenPub\Base\Foundation\Plugin;
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Responsible for the filtering the internal keyword.
  */
 
-namespace OWC\OpenPub\InternalProducts\Data;
+namespace OWC\OpenPub\InternalData\Data;
 
 use OWC\OpenPub\Base\Support\CreatesFields;
 use WP_Post;

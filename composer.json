@@ -1,6 +1,6 @@
 {
-  "name": "plugin/pub-internal-products",
-  "description": "PUB Internal Products Plugin",
+  "name": "plugin/openpub-internal-data",
+  "description": "OpenPub Internal Data Plugin",
   "authors": [
     {
       "name": "Yard | Digital Agency",
@@ -27,8 +27,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "OWC\\PUB\\InternalProducts\\": "./src/InternalProducts",
-      "OWC\\PUB\\InternalProducts\\Tests\\": "./tests"
+      "OWC\\PUB\\InternalData\\": "./src/InternalData",
+      "OWC\\PUB\\InternalData\\Tests\\": "./tests"
     }
   },
   "scripts": {

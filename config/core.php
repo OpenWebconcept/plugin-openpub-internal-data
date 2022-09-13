@@ -10,13 +10,13 @@ return [
         /**
          * Global providers.
          */
-        OWC\OpenPub\InternalProducts\RestAPI\RestAPIServiceProvider::class,
+        OWC\OpenPub\InternalData\RestAPI\RestAPIServiceProvider::class,
 
         /**
          * Providers specific to the admin.
          */
         'admin' => [
-            OWC\OpenPub\InternalProducts\Data\DataServiceProvider::class,
+            OWC\OpenPub\InternalData\Data\DataServiceProvider::class,
         ],
     ],
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Boots the DataServiceProvider.
  */
 
-namespace OWC\OpenPub\InternalProducts\Data;
+namespace OWC\OpenPub\InternalData\Data;
 
 use OWC\OpenPub\Base\Foundation\ServiceProvider;
 use OWC\OpenPub\Base\Repositories\Item;

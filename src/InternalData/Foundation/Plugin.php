@@ -6,7 +6,7 @@ declare(strict_types=1);
  * The base of the plugin.
  */
 
-namespace OWC\OpenPub\InternalProducts\Foundation;
+namespace OWC\OpenPub\InternalData\Foundation;
 
 use OWC\OpenPub\Base\Foundation\Plugin as BasePlugin;
 
@@ -21,7 +21,7 @@ class Plugin extends BasePlugin
      *
      * @const string NAME
      */
-    const NAME = 'openpub-internal-products';
+    const NAME = 'openpub-internal-data';
 
     /**
      * Version of the plugin.

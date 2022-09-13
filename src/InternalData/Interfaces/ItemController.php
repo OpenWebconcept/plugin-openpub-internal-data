@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OWC\OpenPub\InternalProducts\Interfaces;
+namespace OWC\OpenPub\InternalData\Interfaces;
 
 /**
  * Interface for controllers that handle the retrieval of items.

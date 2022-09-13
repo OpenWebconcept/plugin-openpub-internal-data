@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OWC\OpenPub\InternalProducts\RestAPI;
+namespace OWC\OpenPub\InternalData\RestAPI;
 
 use OWC\OpenPub\Base\RestAPI\Controllers\ItemController as BaseItemController;
-use OWC\OpenPub\InternalProducts\Foundation\Plugin;
-use OWC\OpenPub\InternalProducts\Interfaces\ItemController;
+use OWC\OpenPub\InternalData\Foundation\Plugin;
+use OWC\OpenPub\InternalData\Interfaces\ItemController;
 use WP_REST_Request;
 
 /*
