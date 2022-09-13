@@ -26,7 +26,7 @@ class AuthValidator
 
         $user = \wp_authenticate($username, $password);
 
-        if (is_wp_error($user)) {
+        if (\is_wp_error($user)) {
             return false;
         }
 

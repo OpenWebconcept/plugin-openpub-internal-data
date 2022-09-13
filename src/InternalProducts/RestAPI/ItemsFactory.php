@@ -7,7 +7,6 @@ namespace OWC\OpenPub\InternalProducts\RestAPI;
 use OWC\OpenPub\InternalProducts\Auth\AuthValidator;
 use OWC\OpenPub\InternalProducts\Foundation\Plugin;
 use OWC\OpenPub\InternalProducts\Interfaces\ItemController;
-use WP_REST_Request;
 
 /**
  * Selects the correct controller based on the request.
@@ -23,7 +22,7 @@ class ItemsFactory
     /**
      * Executes the correct controller with provided method
      */
-    public function retrieve(WP_REST_Request $request): array
+    public function retrieve(\WP_REST_Request $request): array
     {
         $controller = $this->getController($request);
 
@@ -33,7 +32,7 @@ class ItemsFactory
     /**
      * Gets the desired controller depending on auth status
      */
-    private function getController(WP_REST_Request $request): ItemController
+    private function getController(\WP_REST_Request $request): ItemController
     {
         if (AuthValidator::validate($request)) {
             return new InternalItemsController($this->plugin);
