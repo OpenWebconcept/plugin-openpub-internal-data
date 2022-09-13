@@ -2,7 +2,7 @@
 # This file is distributed under the GPL2+.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: PDC Internal Products\n"
+"Project-Id-Version: OpenPub internal products\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/meta-box\n"
 "POT-Creation-Date: 2018-10-03 10:49+0200\n"
 "PO-Revision-Date: 2018-10-03 10:49+0200\n"

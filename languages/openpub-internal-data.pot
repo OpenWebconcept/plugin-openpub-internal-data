@@ -3,7 +3,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PDC Internal Products\n"
+"Project-Id-Version: OpenPub internal data\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/meta-box\n"
 "POT-Creation-Date: 2018-10-03 10:48+0200\n"
 "MIME-Version: 1.0\n"
