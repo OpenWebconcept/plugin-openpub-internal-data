@@ -1,4 +1,4 @@
-# README
+# Plugin OpenPub internal data
 
 **This plugin is inspired by the [pdc-internal-products plugin](https://bitbucket.org/openwebconcept/plugin-pdc-internal-products)**
 
