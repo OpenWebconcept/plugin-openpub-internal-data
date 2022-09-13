@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace OWC\OpenPub\InternalProducts\RestAPI;
 
-use OWC\OpenPub\InternalProducts\Auth\AuthValidator;
 use OWC\OpenPub\InternalProducts\Foundation\Plugin;
 use OWC\OpenPub\InternalProducts\Interfaces\ItemController;
 
@@ -34,7 +33,7 @@ class ItemsFactory
      */
     private function getController(\WP_REST_Request $request): ItemController
     {
-        if (AuthValidator::validate($request)) {
+        if (\is_user_logged_in()) {
             return new InternalItemsController($this->plugin);
         }
 
