@@ -11,6 +11,7 @@ use WP_REST_Request;
 
 /*
 * Facade that controls the retrieval of the internal OpenPub items from the base plugin.
+* Using the interface ensures that we have the correct methods available.
 */
 class BaseItemsController implements ItemController
 {
