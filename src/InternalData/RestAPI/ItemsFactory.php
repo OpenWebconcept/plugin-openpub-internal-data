@@ -33,6 +33,11 @@ class ItemsFactory
      */
     private function getController(\WP_REST_Request $request): ItemController
     {
+        // Application passwords are not available on accept, so check here.
+        if (getenv('APP_ENV') === 'accept') {
+            return new InternalItemsController($this->plugin);
+        }
+
         if (\is_user_logged_in()) {
             return new InternalItemsController($this->plugin);
         }
