@@ -1,0 +1,21 @@
+name: "plugin-openpub-internal-data"
+
+publiccodeYmlVersion: 1.0
+url: "https://github.com/OpenWebconcept/plugin-openpub-internal-data"
+
+platforms:
+  - "web"
+
+categories:
+  - "application-development"
+
+softwareType: "softwareAddon"
+
+description:
+  localisedName: "Plugin OpenPub internal data"
+  shortDescription: "Deze plugin zorgt ervoor dat je bij een OpenPub-item interne data (onderwaterschermen) kan toevoegen, die alleen voor intern gebruik zchtbaar is."
+  longDescription: "Deze plugin zorgt ervoor dat je bij een OpenPub-item interne data (onderwaterschermen) kan toevoegen, die alleen voor intern gebruik zchtbaar is."
+
+nl:
+  commonground:
+    layerType: "service"
