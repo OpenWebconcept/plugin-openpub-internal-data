@@ -12,6 +12,9 @@ use OWC\OpenPub\InternalData\Interfaces\ItemController;
  */
 class ItemsFactory
 {
+    protected string $method;
+    protected Plugin $plugin;
+    
     public function __construct(string $method, Plugin $plugin)
     {
         $this->method = $method;
@@ -24,8 +27,13 @@ class ItemsFactory
     public function retrieve(\WP_REST_Request $request): array
     {
         $controller = $this->getController($request);
+        $response = $controller->{$this->method}($request);
 
-        return $controller->{$this->method}($request);
+        if (! is_array($response)) {
+            return ['errors' => $response->errors['no_item_found'][0] ?? 'Something went wrong with fetching the result'];
+        }
+        
+        return $response;
     }
 
     /**
@@ -34,7 +42,7 @@ class ItemsFactory
     private function getController(\WP_REST_Request $request): ItemController
     {
         // Application passwords are not available on accept, so check here.
-        if (getenv('APP_ENV') === 'accept') {
+        if ($_ENV['APP_ENV'] ?? '' === 'accept') {
             return new InternalItemsController($this->plugin);
         }
 

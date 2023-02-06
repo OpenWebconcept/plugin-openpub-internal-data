@@ -15,6 +15,8 @@ use WP_REST_Request;
 */
 class BaseItemsController implements ItemController
 {
+    protected BaseItemController $baseController;
+    
     public function __construct(Plugin $plugin)
     {
         $this->baseController = new BaseItemController($plugin);

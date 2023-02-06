@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-/**
- * Get items, including the 'internal' fields
- */
-
 namespace OWC\OpenPub\InternalData\RestAPI;
 
 use OWC\OpenPub\Base\Foundation\Plugin;
@@ -15,17 +11,8 @@ use OWC\OpenPub\InternalData\Data\DataServiceProvider;
 use OWC\OpenPub\InternalData\Interfaces\ItemController;
 use WP_REST_Request;
 
-/**
- * Controls the retrieval of the internal OpenPub items.
- */
 class InternalItemsController extends BaseController implements ItemController
 {
-
-    /**
-     * @var Plugin
-     */
-    protected $plugin;
-
     public function __construct(Plugin $plugin)
     {
         $this->plugin = $plugin;
