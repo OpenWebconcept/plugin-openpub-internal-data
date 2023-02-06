@@ -15,7 +15,6 @@ use OWC\OpenPub\Base\Foundation\Plugin as BasePlugin;
  */
 class Plugin extends BasePlugin
 {
-
     /**
      * Name of the plugin.
      *
@@ -29,5 +28,5 @@ class Plugin extends BasePlugin
      *
      * @const string VERSION
      */
-    const VERSION = '1.0.2';
+    const VERSION = '1.0.3';
 }

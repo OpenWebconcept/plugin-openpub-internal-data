@@ -1,9 +1,6 @@
 <?php
 
 declare(strict_types=1);
-/**
- * Registers the metabox field.
- */
 
 namespace OWC\OpenPub\InternalData\Data;
 
@@ -16,13 +13,7 @@ use OWC\OpenPub\Base\Foundation\Plugin;
  */
 class Metaboxes
 {
-
-    /**
-     * Instance of the Plugin.
-     *
-     * @var Plugin
-     */
-    private $plugin;
+    private Plugin $plugin;
 
     /**
      * Dependency injection of the plugin, for future use.
@@ -35,7 +26,7 @@ class Metaboxes
     /**
      * Register metaboxes for internal data into openpub-base plugin.
      */
-    public function register(Plugin $basePlugin)
+    public function register(Plugin $basePlugin): void
     {
         $basePlugin->config->set('metaboxes.internaldata', $this->plugin->config->get('metaboxes.internaldata'));
     }
