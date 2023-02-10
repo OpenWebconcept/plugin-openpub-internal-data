@@ -30,6 +30,14 @@ class InternalItemsController extends BaseController implements ItemController
             $items->hide(['connected']);
         }
 
+        if ($this->getTypeParam($request)) {
+            $items->query(Item::addTypeParameter($this->getTypeParam($request)));
+        }
+
+        if ($this->showOnParamIsValid($request) && $this->plugin->settings->useShowOn()) {
+            $items->query(Item::addShowOnParameter($request->get_param('source')));
+        }
+
         $posts = $items->all();
 
         return $this->addPaginator($posts, $items->getQuery());
@@ -141,5 +149,32 @@ class InternalItemsController extends BaseController implements ItemController
         }
 
         return $parameters;
+    }
+
+    protected function getTypeParam(WP_REST_Request $request): string
+    {
+        $typeParam = $request->get_param('type');
+
+        return ! empty($typeParam) && is_string($typeParam) ? $typeParam : '';
+    }
+
+        /**
+     * Validate if show on param is valid.
+     * Param should be a numeric value.
+     *
+     * @param WP_REST_Request $request
+     * @return boolean
+     */
+    protected function showOnParamIsValid(WP_REST_Request $request): bool
+    {
+        if (empty($request->get_param('source'))) {
+            return false;
+        }
+
+        if (!is_numeric($request->get_param('source'))) {
+            return false;
+        }
+
+        return true;
     }
 }

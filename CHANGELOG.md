@@ -1,3 +1,10 @@
+## Version 1.0.4
+
+### Feat
+
+-   Filter items, in api, on type taxonomy slug when param is set.
+-   Filter items, in api, on show on taxonomy slug when param is set.
+
 ## Version 1.0.3
 
 ### Fix
