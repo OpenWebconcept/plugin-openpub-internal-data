@@ -1,3 +1,9 @@
+## Version 1.0.5
+
+### Feat
+
+-   Add filtering on items in api based on taxonomies slug in active items endpoint.
+
 ## Version 1.0.4
 
 ### Feat

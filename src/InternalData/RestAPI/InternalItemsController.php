@@ -85,6 +85,14 @@ class InternalItemsController extends BaseController implements ItemController
             $items->hide(['connected']);
         }
 
+        if ($this->getTypeParam($request)) {
+            $items->query(Item::addTypeParameter($this->getTypeParam($request)));
+        }
+
+        if ($this->showOnParamIsValid($request) && $this->plugin->settings->useShowOn()) {
+            $items->query(Item::addShowOnParameter($request->get_param('source')));
+        }
+
         $posts = $items->all();
 
         return $this->addPaginator($posts, $items->getQuery());
