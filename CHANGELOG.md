@@ -1,3 +1,9 @@
+## Version 1.0.6
+
+### Feat
+
+-   Add related items to api response, single openpub item.
+
 ## Version 1.0.5
 
 ### Feat
