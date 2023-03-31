@@ -21,7 +21,7 @@
   ],
   "require": {
     "php": "^7.0|^8.0",
-    "plugin/openpub-base": "^2.0"
+    "plugin/openpub-base": "^3.0"
   },
   "require-dev": {
     "mockery/mockery": "^1.5",
