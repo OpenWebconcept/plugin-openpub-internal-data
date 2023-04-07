@@ -1,3 +1,9 @@
+## Version 1.0.7
+
+### Feat
+
+-   Add preview parameter for retrieving drafts.
+
 ## Version 1.0.6
 
 ### Feat
