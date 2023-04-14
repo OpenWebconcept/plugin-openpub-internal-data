@@ -32,7 +32,7 @@ class BaseItemsController implements ItemController
         return $this->baseController->getItem($request);
     }
 
-    public function getItemBySlug(WP_REST_Request $request): array
+    public function getItemBySlug(WP_REST_Request $request)
     {
         return $this->baseController->getItemBySlug($request);
     }

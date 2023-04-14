@@ -1,3 +1,9 @@
+## Version 1.0.9
+
+### Fix
+
+-   Remove return type of getItemBySlug method inside BaseItemsController.
+
 ## Version 1.0.8
 
 ### Fix
