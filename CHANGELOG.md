@@ -1,3 +1,9 @@
+## Version 1.0.8
+
+### Fix
+
+-   APP_ENV check in ItemsFactory while getting controller class.
+
 ## Version 1.0.7
 
 ### Feat

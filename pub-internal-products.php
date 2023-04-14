@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Plugin Name:       OpenPub Internal Data
  * Plugin URI:        https://www.openwebconcept.nl/
  * Description:       Adds internal data to authenticated requests
- * Version:           1.0.7
+ * Version:           1.0.8
  * Author:            Yard | Digital Agency
  * Author URI:        https://www.yard.nl/
  * License:           GPL-3.0
