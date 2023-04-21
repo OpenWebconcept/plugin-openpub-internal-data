@@ -37,8 +37,14 @@ return [
         [
             'type'    => 'plugin',
             'label'   => 'OpenPub Base',
-            'version' => '2.0.0',
+            'version' => '3.0.0',
             'file'    => 'openpub-base/openpub-base.php',
+        ],
+        [
+            'type'    => 'plugin',
+            'label'   => 'CMB2',
+            'version' => '2.10.1',
+            'file'    => 'cmb2/init.php',
         ],
     ],
 ];

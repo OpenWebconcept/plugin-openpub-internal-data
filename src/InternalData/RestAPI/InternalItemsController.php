@@ -26,7 +26,7 @@ class InternalItemsController extends BaseController implements ItemController
         $this->addFields();
         $parameters = $this->convertParameters($request->get_params());
 
-        $items      = (new Item())
+        $items = (new Item())
             ->query($this->getPaginatorParams($request));
 
         if (false === $parameters['include-connected']) {
@@ -144,10 +144,10 @@ class InternalItemsController extends BaseController implements ItemController
     {
         $items = (new Item())
             ->query([
-                'post__not_in'   => [$item['id']],
+                'post__not_in' => [$item['id']],
                 'posts_per_page' => 10,
-                'post_status'    => 'publish',
-                'post_type'      => 'openpub-item',
+                'post_status' => 'publish',
+                'post_type' => 'openpub-item',
             ])
             ->query(Item::addExpirationParameters());
 
@@ -156,6 +156,7 @@ class InternalItemsController extends BaseController implements ItemController
         }
 
         $query = new WP_Query($items->getQueryArgs());
+
         return array_map([$this, 'transform'], $query->posts);
     }
 
@@ -165,14 +166,14 @@ class InternalItemsController extends BaseController implements ItemController
     public function transform(WP_Post $post): array
     {
         $data = [
-            'id'            => $post->ID,
-            'title'         => $post->post_title,
-            'content'       => \apply_filters('the_content', $post->post_content),
-            'excerpt'       => $post->post_excerpt,
-            'date'          => $post->post_date,
+            'id' => $post->ID,
+            'title' => $post->post_title,
+            'content' => \apply_filters('the_content', $post->post_content),
+            'excerpt' => $post->post_excerpt,
+            'date' => $post->post_date,
             'thumbnail_url' => \get_the_post_thumbnail_url($post->ID),
-            'image'         => $this->getImageUrl($post),
-            'slug'          => $post->post_name,
+            'image' => $this->getImageUrl($post),
+            'slug' => $post->post_name,
         ];
 
         return $data;
@@ -229,12 +230,13 @@ class InternalItemsController extends BaseController implements ItemController
         return ! empty($typeParam) && is_string($typeParam) ? $typeParam : '';
     }
 
-        /**
+    /**
      * Validate if show on param is valid.
      * Param should be a numeric value.
      *
      * @param WP_REST_Request $request
-     * @return boolean
+     *
+     * @return bool
      */
     protected function showOnParamIsValid(WP_REST_Request $request): bool
     {
@@ -242,7 +244,7 @@ class InternalItemsController extends BaseController implements ItemController
             return false;
         }
 
-        if (!is_numeric($request->get_param('source'))) {
+        if (! is_numeric($request->get_param('source'))) {
             return false;
         }
 

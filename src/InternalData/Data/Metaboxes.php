@@ -28,6 +28,6 @@ class Metaboxes
      */
     public function register(Plugin $basePlugin): void
     {
-        $basePlugin->config->set('metaboxes.internaldata', $this->plugin->config->get('metaboxes.internaldata'));
+        $basePlugin->config->set('cmb2_metaboxes.internaldata', $this->plugin->config->get('metaboxes.internaldata'));
     }
 }
