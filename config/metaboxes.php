@@ -6,7 +6,7 @@ return [
     'internaldata' => [
         'id'         => 'openpub_internaldata',
         'title'      => __('Internal Data', 'openpub-internal-data'),
-        'post_types' => ['openpub-item'],
+        'object_types' => ['openpub-item'],
         'context'    => 'normal',
         'priority'   => 'high',
         'autosave'   => true,

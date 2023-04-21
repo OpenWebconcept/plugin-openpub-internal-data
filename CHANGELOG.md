@@ -1,3 +1,9 @@
+## Version 2.0.0
+
+### Feat
+
+-   Implement CMB2 and replace Metabox.io
+
 ## Version 1.0.9
 
 ### Fix
