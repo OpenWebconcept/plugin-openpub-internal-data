@@ -20,7 +20,7 @@ class Plugin extends BasePlugin
      *
      * @const string NAME
      */
-    const NAME = 'openpub-internal-data';
+    public const NAME = 'openpub-internal-data';
 
     /**
      * Version of the plugin.
@@ -28,5 +28,5 @@ class Plugin extends BasePlugin
      *
      * @const string VERSION
      */
-    const VERSION = '2.0.0';
+    public const VERSION = '2.1';
 }
