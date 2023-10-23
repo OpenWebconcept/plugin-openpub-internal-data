@@ -1,8 +1,14 @@
+## Version 2.1
+
+## Feat
+
+-   Support for multiple type params in tax query used in api responses.
+
 ## Version 2.0.0
 
 ### Feat
 
--   Implement CMB2 and replace Metabox.io
+-   Implement CMB2 and replace Metabox.io.
 
 ## Version 1.0.9
 

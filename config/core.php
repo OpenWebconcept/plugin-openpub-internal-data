@@ -37,7 +37,7 @@ return [
         [
             'type'    => 'plugin',
             'label'   => 'OpenPub Base',
-            'version' => '3.0.0',
+            'version' => '3.5',
             'file'    => 'openpub-base/openpub-base.php',
         ],
         [
