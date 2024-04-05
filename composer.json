@@ -22,7 +22,7 @@
   "require": {
     "php": "^7.0|^8.0",
     "plugin/openpub-base": "^3.0",
-    "wpackagist-plugin/cmb2": "2.10.*"
+    "wpackagist-plugin/cmb2": "2.11.*"
   },
   "require-dev": {
     "mockery/mockery": "^1.5",

@@ -1,72 +1,54 @@
-## Version 2.1
+# Changelog
 
-## Feat
+## v2.1.1
 
--   Support for multiple type params in tax query used in api responses.
+- Chore: Update CMB2 to version 2.11.0.
 
-## Version 2.0.0
+## v2.1.0
 
-### Feat
+- Feat: Support for multiple type params in tax query used in api responses.
 
--   Implement CMB2 and replace Metabox.io.
+## v2.0.0
 
-## Version 1.0.9
+- Feat: Implement CMB2 and replace Metabox.io.
 
-### Fix
+## v1.0.9
 
--   Remove return type of getItemBySlug method inside BaseItemsController.
+- Fix: Remove return type of getItemBySlug method inside BaseItemsController.
 
-## Version 1.0.8
+## v1.0.8
 
-### Fix
+- Fix: APP_ENV check in ItemsFactory while getting controller class.
 
--   APP_ENV check in ItemsFactory while getting controller class.
+## v1.0.7
 
-## Version 1.0.7
+- Feat: Add preview parameter for retrieving drafts.
 
-### Feat
+## v1.0.6
 
--   Add preview parameter for retrieving drafts.
+- Feat: Add related items to api response, single openpub item.
 
-## Version 1.0.6
+## v1.0.5
 
-### Feat
+- Feat: Add filtering on items in api based on taxonomies slug in active items endpoint.
 
--   Add related items to api response, single openpub item.
+## v1.0.4
 
-## Version 1.0.5
+- Feat: Filter items, in api, on type taxonomy slug when param is set.
+- Feat: Filter items, in api, on show on taxonomy slug when param is set.
 
-### Feat
+## v1.0.3
 
--   Add filtering on items in api based on taxonomies slug in active items endpoint.
+- Fix: Return value must be array, object returned in ItemsFactory method retrieve.
 
-## Version 1.0.4
+## v1.0.2
 
-### Feat
+- Chore: Update dependencies + reference openpub-base plugin from BitBucket to GitHub.
 
--   Filter items, in api, on type taxonomy slug when param is set.
--   Filter items, in api, on show on taxonomy slug when param is set.
+## v1.0.1
 
-## Version 1.0.3
+- Fix: Fixes and tweaks.
 
-### Fix
+## v1.0.0
 
--   Return value must be array, object returned in ItemsFactory method retrieve.
-
-## Version 1.0.2
-
-### Chore
-
--   Update dependencies + reference openpub-base plugin from BitBucket to GitHub.
-
-## Version 1.0.1
-
-### Features:
-
--   Fixes and tweaks.
-
-## Version 1.0.0
-
-### Features:
-
--   Initial release.
+- Initial release.

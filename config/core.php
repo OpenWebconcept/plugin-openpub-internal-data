@@ -43,7 +43,7 @@ return [
         [
             'type' => 'plugin',
             'label' => 'CMB2',
-            'version' => '2.10.1',
+            'version' => '2.11.0',
             'file' => 'cmb2/init.php',
         ],
     ],
