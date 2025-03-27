@@ -44,6 +44,12 @@ class RestAPIServiceProvider extends ServiceProvider
             'permission_callback' => '__return_true',
         ], true);
 
+		register_rest_route($this->namespace, 'items/active', [
+			'methods' => 'GET',
+			'callback' => [(new ItemsFactory('getActiveItems', $this->plugin)), 'retrieve'],
+			'permission_callback' => '__return_true',
+		], true);
+
         register_rest_route($this->namespace, 'items/(?P<id>\d+)', [
             'methods' => 'GET',
             'callback' => [(new ItemsFactory('getItem', $this->plugin)), 'retrieve'],
@@ -53,12 +59,6 @@ class RestAPIServiceProvider extends ServiceProvider
         register_rest_route($this->namespace, 'items/(?P<slug>[\w-]+)', [
             'methods' => 'GET',
             'callback' => [(new ItemsFactory('getItemBySlug', $this->plugin)), 'retrieve'],
-            'permission_callback' => '__return_true',
-        ], true);
-
-        register_rest_route($this->namespace, 'items/active', [
-            'methods' => 'GET',
-            'callback' => [(new ItemsFactory('getActiveItems', $this->plugin)), 'retrieve'],
             'permission_callback' => '__return_true',
         ], true);
     }
