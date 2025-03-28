@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.3
+
+- Fix: translations just in time error
+
 ## v2.1.2
 
 - Refactor: register rest routes in correct order
