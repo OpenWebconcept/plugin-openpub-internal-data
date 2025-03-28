@@ -39,5 +39,9 @@ $autoloader = new Autoloader();
  * and wp_loaded action hooks.
  */
 add_action('plugins_loaded', function () {
-    (new Plugin(__DIR__))->boot();
+	add_action('after_setup_theme', function () {
+    	$plugin = (new Plugin(__DIR__));
+		$plugin->boot();
+		do_action('owc/openpub-internal-data/plugin', $plugin);
+	});
 }, 11);
