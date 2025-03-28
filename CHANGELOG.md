@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.2
+
+- Refactor: register rest routes in correct order
+
 ## v2.1.1
 
 - Chore: Update CMB2 to version 2.11.0.
