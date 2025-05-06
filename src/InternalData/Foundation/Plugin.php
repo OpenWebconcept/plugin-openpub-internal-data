@@ -28,5 +28,5 @@ class Plugin extends BasePlugin
      *
      * @const string VERSION
      */
-    public const VERSION = '2.1.3';
+    public const VERSION = '2.1.4';
 }

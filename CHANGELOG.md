@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.4
+
+- Fix: return correct HTTP status code when request failed
+
 ## v2.1.3
 
 - Fix: translations just in time error
