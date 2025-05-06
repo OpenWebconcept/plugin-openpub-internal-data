@@ -6,6 +6,8 @@ namespace OWC\OpenPub\InternalData\RestAPI;
 
 use OWC\OpenPub\InternalData\Foundation\Plugin;
 use OWC\OpenPub\InternalData\Interfaces\ItemController;
+use WP_Error;
+use WP_REST_Request;
 
 /**
  * Selects the correct controller based on the request.
@@ -14,7 +16,7 @@ class ItemsFactory
 {
     protected string $method;
     protected Plugin $plugin;
-    
+
     public function __construct(string $method, Plugin $plugin)
     {
         $this->method = $method;
@@ -22,24 +24,21 @@ class ItemsFactory
     }
 
     /**
-     * Executes the correct controller with provided method
+     * Executes the correct controller with provided method.
+	 *
+	 * @return array|WP_Error
      */
-    public function retrieve(\WP_REST_Request $request): array
+    public function retrieve(WP_REST_Request $request)
     {
         $controller = $this->getController($request);
-        $response = $controller->{$this->method}($request);
 
-        if (! is_array($response)) {
-            return ['errors' => $response->errors['no_item_found'][0] ?? 'Something went wrong with fetching the result'];
-        }
-        
-        return $response;
+		return $controller->{$this->method}($request);
     }
 
     /**
      * Gets the desired controller depending on auth status
      */
-    private function getController(\WP_REST_Request $request): ItemController
+    private function getController(WP_REST_Request $request): ItemController
     {
         // Application passwords are not available on accept, so check here.
         if ('accept' === ($_ENV['APP_ENV'] ?? '')) {

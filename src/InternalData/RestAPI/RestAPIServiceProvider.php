@@ -15,7 +15,6 @@ use OWC\OpenPub\Base\Foundation\ServiceProvider;
  */
 class RestAPIServiceProvider extends ServiceProvider
 {
-
     /**
      * Endpoint of the rest API.
      *
