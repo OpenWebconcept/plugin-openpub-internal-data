@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.5
+
+- Chore: update dependencies
+
 ## v2.1.4
 
 - Fix: return correct HTTP status code when request failed
