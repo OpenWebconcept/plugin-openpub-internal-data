@@ -38,6 +38,10 @@ class InternalItemsController extends BaseController implements ItemController
             $items->query(Item::addShowOnParameter($request->get_param('source')));
         }
 
+		if ($this->getAudienceParam($request)) {
+            $items->query(Item::addAudienceParameters($this->getAudienceParam($request)));
+        }
+
         $posts = $items->all();
 
         return $this->addPaginator($posts, $items->getQuery());

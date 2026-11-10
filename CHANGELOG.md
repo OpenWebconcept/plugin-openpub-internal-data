@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.6
+
+- Fix: Add audience parameter when available
+
 ## v2.1.5
 
 - Chore: update dependencies
