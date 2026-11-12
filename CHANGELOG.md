@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.2.0
+
+- Feat: declare REST API route args, reusing the ones OpenPub Base declares for the routes this plugin overrides
+- Chore: require OpenPub Base 3.10.0
+
 ## v2.1.5
 
 - Chore: update dependencies

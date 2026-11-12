@@ -21,12 +21,11 @@ class InternalItemsController extends BaseController implements ItemController
     public function getItems(WP_REST_Request $request): array
     {
         $this->addFields();
-        $parameters = $this->convertParameters($request->get_params());
 
         $items = (new Item())
             ->query($this->getPaginatorParams($request));
 
-        if (false === $parameters['include-connected']) {
+        if (null === $request->get_param('include-connected')) {
             $items->hide(['connected']);
         }
 
@@ -34,8 +33,8 @@ class InternalItemsController extends BaseController implements ItemController
             $items->query(Item::addTypeParameter($this->getTypeParam($request)));
         }
 
-        if ($this->showOnParamIsValid($request) && $this->plugin->settings->useShowOn()) {
-            $items->query(Item::addShowOnParameter($request->get_param('source')));
+        if ($request->get_param('source') && $this->plugin->settings->useShowOn()) {
+            $items->query(Item::addShowOnParameter((string) $request->get_param('source')));
         }
 
         $posts = $items->all();
@@ -71,7 +70,6 @@ class InternalItemsController extends BaseController implements ItemController
     public function getActiveItems(WP_REST_Request $request): array
     {
         $this->addFields();
-        $parameters = $this->convertParameters($request->get_params());
 
         $items = (new Item())
             ->query(
@@ -81,7 +79,7 @@ class InternalItemsController extends BaseController implements ItemController
                 )
             );
 
-        if (false === $parameters['include-connected']) {
+        if (null === $request->get_param('include-connected')) {
             $items->hide(['connected']);
         }
 
@@ -89,8 +87,8 @@ class InternalItemsController extends BaseController implements ItemController
             $items->query(Item::addTypeParameter($this->getTypeParam($request)));
         }
 
-        if ($this->showOnParamIsValid($request) && $this->plugin->settings->useShowOn()) {
-            $items->query(Item::addShowOnParameter($request->get_param('source')));
+        if ($request->get_param('source') && $this->plugin->settings->useShowOn()) {
+            $items->query(Item::addShowOnParameter((string) $request->get_param('source')));
         }
 
         $posts = $items->all();
@@ -128,34 +126,13 @@ class InternalItemsController extends BaseController implements ItemController
         (new DataServiceProvider($this->plugin))->register();
     }
 
-    /**
-     * Convert the parameters to the allowed ones.
-     */
-    protected function convertParameters(array $parametersFromRequest): array
+    public function collectionArguments(): array
     {
-        $parameters = [];
-
-        if (isset($parametersFromRequest['name'])) {
-            $parameters['name'] = esc_attr($parametersFromRequest['name']);
-        }
-
-        $parameters['include-connected'] = (isset($parametersFromRequest['include-connected'])) ? true : false;
-
-        if (! empty($parametersFromRequest['slug'])) {
-            $parameters['name'] = esc_attr($parametersFromRequest['slug']);
-            unset($parametersFromRequest['slug']);
-        }
-
-        if (! empty($parametersFromRequest['id'])) {
-            $parameters['p'] = absint($parametersFromRequest['id']);
-            unset($parametersFromRequest['slug']);
-        }
-
-        if (! empty($parametersFromRequest['exclude'])) {
-            $parameters['exclude'] = esc_attr($parametersFromRequest['exclude']);
-            unset($parametersFromRequest['exclude']);
-        }
-
-        return $parameters;
+        return array_merge(parent::collectionArguments(), [
+            // Untyped: a bare ?include-connected enables it, which a boolean type would reject.
+            'include-connected' => [
+                'description' => __('Include connected items. Logged-in requests only.', 'openpub-internal-data'),
+            ],
+        ]);
     }
 }
