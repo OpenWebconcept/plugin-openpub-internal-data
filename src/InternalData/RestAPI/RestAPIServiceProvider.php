@@ -37,27 +37,34 @@ class RestAPIServiceProvider extends ServiceProvider
      */
     public function registerRoutes()
     {
+        // Overriding a route drops the args OpenPub Base declared for it, so declare them again.
+        $controller = new InternalItemsController($this->plugin);
+
         register_rest_route($this->namespace, 'items', [
             'methods' => 'GET',
             'callback' => [(new ItemsFactory('getItems', $this->plugin)), 'retrieve'],
+            'args' => $controller->collectionArguments(),
             'permission_callback' => '__return_true',
         ], true);
 
 		register_rest_route($this->namespace, 'items/active', [
 			'methods' => 'GET',
 			'callback' => [(new ItemsFactory('getActiveItems', $this->plugin)), 'retrieve'],
+			'args' => $controller->collectionArguments(),
 			'permission_callback' => '__return_true',
 		], true);
 
         register_rest_route($this->namespace, 'items/(?P<id>\d+)', [
             'methods' => 'GET',
             'callback' => [(new ItemsFactory('getItem', $this->plugin)), 'retrieve'],
+            'args' => $controller->singleArguments(),
             'permission_callback' => '__return_true',
         ], true);
 
         register_rest_route($this->namespace, 'items/(?P<slug>[\w-]+)', [
             'methods' => 'GET',
             'callback' => [(new ItemsFactory('getItemBySlug', $this->plugin)), 'retrieve'],
+            'args' => $controller->singleArguments(),
             'permission_callback' => '__return_true',
         ], true);
     }
